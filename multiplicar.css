@@ -619,3 +619,113 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* =========================================
+   13. INSTRUCCIONES Y AYUDAS PARA EL USUARIO
+========================================= */
+
+.instrucciones {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin: 0 0 24px;
+    padding: 18px;
+    background: rgba(34, 211, 238, 0.055);
+    border: 1px solid rgba(34, 211, 238, 0.22);
+    border-radius: var(--radio);
+}
+
+.instrucciones-icono {
+    display: grid;
+    place-items: center;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    color: var(--cian);
+    border: 1px solid rgba(34, 211, 238, 0.4);
+    border-radius: 50%;
+    font-family: var(--fuente-tecnica);
+    font-weight: 600;
+}
+
+.instrucciones-contenido {
+    min-width: 0;
+}
+
+.instrucciones-contenido h2 {
+    margin: 2px 0 10px;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.instrucciones-contenido ol {
+    padding-left: 20px;
+    color: var(--texto-secundario);
+    font-size: 0.84rem;
+    line-height: 1.8;
+}
+
+.instrucciones-contenido li {
+    padding-left: 3px;
+}
+
+.instrucciones-contenido strong {
+    color: var(--texto);
+    font-weight: 600;
+}
+
+.grupo-input label {
+    line-height: 1.5;
+}
+
+.input-tech {
+    min-height: 48px;
+}
+
+.input-tech:focus-visible {
+    outline: 2px solid var(--cian);
+    outline-offset: 3px;
+}
+
+.ayuda-input {
+    display: block;
+}
+
+.zona-boton {
+    margin-bottom: 28px;
+}
+
+.ayuda-boton {
+    margin-top: 10px;
+    color: var(--texto-secundario);
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+.panel-descripcion {
+    margin-top: 5px;
+    color: var(--texto-secundario);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .instrucciones {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .instrucciones-contenido h2 {
+        font-size: 0.9rem;
+    }
+
+    .instrucciones-contenido ol {
+        font-size: 0.82rem;
+    }
+
+    .ayuda-boton {
+        text-align: center;
+    }
+}
