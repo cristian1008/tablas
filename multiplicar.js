@@ -3,9 +3,13 @@
 function generarTablas(){
 
 
-
     let contenido="";
-    let multiplo=5;
+    let multiplo=3;
+
+    let cmpMultiplo=document.getElementById("txtRespuesta");
+    let multiploStr=cmpMultiplo.value;
+    multiplo=parseInt(multiploStr);
+
 
     for(let i=1; i<=10; i++){
         contenido=contenido+"<div class='fila'><span class='operacion'>"+multiplo+"<span>×</span>"+i+"</span><span class='resultado'>"+multiplo*i+"</span></div>";

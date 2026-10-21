@@ -464,6 +464,68 @@ body {
     letter-spacing: 0.2px;
 }
 
+/*----------------------------------------------------------------------------------------------------*/
+/* CONTENEDOR DE LA CAJA DE TEXTO */
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 420px;
+    margin: 24px auto;
+}
+
+/* ETIQUETA DEL INPUT */
+.grupo-input label {
+    color: var(--texto);
+    font-family: var(--fuente-principal);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* CAJA DE TEXTO */
+.input-tech {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+
+    background-color: var(--superficie);
+    color: var(--texto);
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+
+    outline: none;
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease;
+}
+
+/* TEXTO DE EJEMPLO */
+.input-tech::placeholder {
+    color: var(--texto-tenue);
+    opacity: 1;
+}
+
+/* EFECTO AL SELECCIONAR EL INPUT */
+.input-tech:focus {
+    border-color: var(--cian);
+    background-color: var(--superficie-hover);
+    box-shadow: 0 0 0 3px rgb(0 220 255 / 12%);
+}
+
+/* TEXTO DE AYUDA */
+.ayuda-input {
+    color: var(--texto-secundario);
+    font-family: var(--fuente-principal);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+/*------------------------------------------------------------------------------------------------*/
 
 /* =========================================
    11. RESPONSIVE: TABLET Y MÓVIL
@@ -493,6 +555,20 @@ body {
     .descripcion {
         font-size: 0.88rem;
     }
+
+    /*----------------------------------------------------------------------------------------------*/
+
+    .grupo-input {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    .input-tech {
+        padding: 13px 14px;
+        font-size: 16px;
+    }
+
+    /*----------------------------------------------------------------------------------------------*/
 
     .zona-boton {
         margin-bottom: 23px;
