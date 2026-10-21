@@ -1,163 +1,545 @@
-/* Configuración general */
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+========================================= */
+
+:root {
+    --fondo: #0B1220;
+    --superficie: #111C30;
+    --superficie-hover: #182840;
+    --borde: #26364D;
+
+    --cian: #22D3EE;
+    --azul: #2563EB;
+    --verde: #10B981;
+
+    --texto: #E5E7EB;
+    --texto-secundario: #94A3B8;
+    --texto-tenue: #64748B;
+
+    --fuente-principal: "Inter", Arial, sans-serif;
+    --fuente-tecnica: "JetBrains Mono", monospace;
+
+    --radio: 12px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #e0f2fe, #ede9fe);
-    color: #1e293b;
-    min-height: 100vh;
-    padding: 25px 15px;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Contenedor principal */
+body {
+    min-height: 100vh;
+    padding: 36px 18px;
+
+    font-family: var(--fuente-principal);
+    color: var(--texto);
+
+    background:
+        radial-gradient(
+            ellipse at top left,
+            rgba(37, 99, 235, 0.14),
+            transparent 42%
+        ),
+        var(--fondo);
+}
+
+/* =========================================
+   2. CONTENEDOR PRINCIPAL
+========================================= */
+
 .contenedor {
     width: 100%;
-    max-width: 650px;
+    max-width: 760px;
     margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 18px;
+
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(30, 41, 59, 0.15);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
 }
 
-/* Encabezado */
+/* =========================================
+   3. ENCABEZADO CORPORATIVO
+========================================= */
+
 .encabezado {
-    background: linear-gradient(135deg, #1d4ed8, #6d28d9);
-    color: #ffffff;
-    text-align: center;
-    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    padding: 22px 30px;
+    border-bottom: 1px solid var(--borde);
+    background: rgba(11, 18, 32, 0.65);
 }
 
-.encabezado h1 {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
-    margin-bottom: 10px;
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.encabezado p {
-    font-size: 1rem;
-    line-height: 1.5;
+.marca-icono {
+    display: grid;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    border-radius: 10px;
+
+    color: var(--cian);
+    background: rgba(34, 211, 238, 0.08);
+
+    font-family: var(--fuente-tecnica);
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-/* Contenido */
+.marca-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.marca-nombre {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.marca-descripcion {
+    color: var(--texto-secundario);
+    font-size: 0.61rem;
+    letter-spacing: 1px;
+}
+
+.estado {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--texto-secundario);
+    font-family: var(--fuente-tecnica);
+    font-size: 0.66rem;
+}
+
+.estado-punto {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--verde);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+/* =========================================
+   4. INTRODUCCIÓN
+========================================= */
+
 .contenido {
-    padding: 25px;
+    padding: 34px 30px;
 }
 
-/* Botón superior */
-.zona-boton {
-    text-align: center;
+.introduccion {
     margin-bottom: 25px;
 }
 
+.etiqueta,
+.panel-etiqueta {
+    display: block;
+    margin-bottom: 12px;
+
+    color: var(--cian);
+    font-family: var(--fuente-tecnica);
+    font-size: 0.7rem;
+    letter-spacing: 1.1px;
+}
+
+.introduccion h1 {
+    color: #FFFFFF;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+    font-weight: 800;
+}
+
+.introduccion h1 span {
+    color: var(--cian);
+}
+
+.descripcion {
+    max-width: 530px;
+    margin-top: 14px;
+
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   5. BOTÓN PROBAR
+========================================= */
+
+.zona-boton {
+    margin-bottom: 28px;
+}
+
 .boton-probar {
-    display: inline-block;
-    background-color: #ea580c;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 13px 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 48px;
+    padding: 0 20px;
+
+    color: #FFFFFF;
+    background: var(--azul);
+    border: 1px solid #3B82F6;
     border-radius: 8px;
-    border: 2px solid transparent;
-    transition: background-color 0.3s ease,
-                transform 0.3s ease;
+
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.boton-icono,
+.boton-flecha {
+    font-family: var(--fuente-tecnica);
+}
+
+.boton-icono {
+    color: var(--cian);
+    font-size: 0.85rem;
+}
+
+.boton-flecha {
+    margin-left: 5px;
 }
 
 .boton-probar:hover {
-    background-color: #c2410c;
+    background: #1D4ED8;
+    border-color: var(--cian);
     transform: translateY(-2px);
 }
 
 .boton-probar:focus-visible {
-    outline: 3px solid #2563eb;
+    outline: 3px solid var(--cian);
     outline-offset: 4px;
 }
 
-/* Título de la tabla */
-.contenido h2 {
-    text-align: center;
-    color: #1d4ed8;
-    font-size: 1.5rem;
-    margin-bottom: 18px;
-}
+/* =========================================
+   6. PANEL DE LA TABLA
+========================================= */
 
-/* Tabla de multiplicar */
-.tabla-multiplicar {
-    max-width: 400px;
-    margin: 0 auto;
-    border: 1px solid #dbeafe;
-    border-radius: 10px;
+.panel-tabla {
     overflow: hidden;
+
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    background: var(--fondo);
 }
 
-.fila {
+.panel-encabezado {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 22px;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #e2e8f0;
+    gap: 15px;
+
+    padding: 22px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.panel-etiqueta {
+    margin-bottom: 8px;
+    font-size: 0.64rem;
+}
+
+.panel-encabezado h2 {
+    color: #FFFFFF;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    line-height: 1.5;
+}
+
+.panel-version {
+    display: grid;
+    place-items: center;
+
+    min-width: 44px;
+    height: 40px;
+    padding: 0 10px;
+
+    color: var(--cian);
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    border-radius: 8px;
+
+    font-family: var(--fuente-tecnica);
+    font-weight: 600;
+}
+
+/* =========================================
+   7. FILAS DE MULTIPLICACIÓN
+========================================= */
+
+.tabla-multiplicar {
+    width: 100%;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    min-height: 48px;
+    padding: 11px 22px;
+
+    border-bottom: 1px solid rgba(38, 54, 77, 0.65);
+
     transition: background-color 0.2s ease;
-}
-
-.fila:nth-child(odd) {
-    background-color: #eff6ff;
-}
-
-.fila:nth-child(even) {
-    background-color: #ffffff;
 }
 
 .fila:last-child {
     border-bottom: none;
 }
 
-.fila:hover {
-    background-color: #dbeafe;
+.fila:not(.fila-titulos):hover {
+    background: var(--superficie-hover);
 }
 
-.fila span:last-child {
-    font-weight: bold;
-    color: #6d28d9;
+.fila-titulos {
+    min-height: 40px;
+    color: var(--texto-tenue);
+    background: rgba(17, 28, 48, 0.75);
+
+    font-family: var(--fuente-principal);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* Pie de página */
+.fila-titulos span:last-child {
+    text-align: right;
+}
+
+.operacion {
+    color: var(--texto);
+    font-family: var(--fuente-tecnica);
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.operacion span {
+    padding: 0 5px;
+    color: var(--texto-tenue);
+}
+
+.resultado {
+    color: var(--cian);
+    text-align: right;
+
+    font-family: var(--fuente-tecnica);
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+/* =========================================
+   8. PIE DEL PANEL
+========================================= */
+
+.panel-pie {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    padding: 15px 22px;
+    border-top: 1px solid var(--borde);
+    background: rgba(17, 28, 48, 0.65);
+
+    color: var(--texto-secundario);
+    font-family: var(--fuente-tecnica);
+    font-size: 0.65rem;
+    letter-spacing: 0.4px;
+}
+
+.panel-pie strong {
+    color: var(--verde);
+    font-weight: 600;
+}
+
+/* =========================================
+   9. CONSEJO EDUCATIVO
+========================================= */
+
+.nota {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    margin-top: 22px;
+    padding: 16px;
+
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    background: rgba(11, 18, 32, 0.55);
+}
+
+.nota-icono {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 22px;
+    height: 22px;
+
+    color: var(--cian);
+    border: 1px solid rgba(34, 211, 238, 0.4);
+    border-radius: 50%;
+
+    font-family: var(--fuente-tecnica);
+    font-size: 0.8rem;
+}
+
+.nota p {
+    color: var(--texto-secundario);
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+/* =========================================
+   10. PIE DE PÁGINA
+========================================= */
+
 .pie {
-    background-color: #f8fafc;
-    color: #64748b;
-    text-align: center;
-    padding: 18px 15px;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding: 18px 30px;
+    border-top: 1px solid var(--borde);
+    background: rgba(11, 18, 32, 0.65);
+
+    color: var(--texto-tenue);
+    font-family: var(--fuente-tecnica);
+    font-size: 0.63rem;
+    letter-spacing: 0.5px;
 }
 
-/* Adaptación para celulares */
-@media (max-width: 480px) {
+.separador {
+    padding: 0 5px;
+    color: var(--cian);
+}
+
+
+/* Firma personal del desarrollador */
+
+.creador {
+    color: var(--texto-secundario);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.creador strong {
+    color: var(--cian);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   11. RESPONSIVE: TABLET Y MÓVIL
+========================================= */
+
+@media (max-width: 600px) {
     body {
-        padding: 12px 8px;
+        padding: 14px 9px;
     }
 
     .encabezado {
-        padding: 24px 14px;
+        padding: 18px;
+    }
+
+    .estado {
+        font-size: 0.6rem;
     }
 
     .contenido {
-        padding: 20px 14px;
+        padding: 25px 17px;
     }
 
-    .fila {
-        padding: 12px 16px;
-        font-size: 1rem;
+    .introduccion h1 {
+        letter-spacing: -0.7px;
+    }
+
+    .descripcion {
+        font-size: 0.88rem;
+    }
+
+    .zona-boton {
+        margin-bottom: 23px;
     }
 
     .boton-probar {
         width: 100%;
-        max-width: 250px;
-        padding: 13px 20px;
+    }
+
+    .panel-encabezado {
+        padding: 17px;
+    }
+
+    .fila {
+        padding: 11px 17px;
+    }
+
+    .panel-pie {
+        padding: 13px 17px;
+        font-size: 0.6rem;
+    }
+
+    .pie {
+        padding: 17px;
+        font-size: 0.58rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .creador {
+        line-height: 1.8;
+    }
+}
+
+/* =========================================
+   12. ACCESIBILIDAD: MENOS MOVIMIENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
     }
 }

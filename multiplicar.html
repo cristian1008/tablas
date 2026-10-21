@@ -3,84 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla del 3</title>
+
+    <meta name="theme-color" content="#0B1220">
+    <meta name="description"
+          content="Tabla de multiplicar del 3 con una interfaz tecnológica y adaptable.">
+
+    <title>Tabla del 3 | TechLab</title>
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
     <link rel="stylesheet" href="multiplicar.css">
 </head>
+
 <body>
 
     <main class="contenedor">
 
         <header class="encabezado">
-            <h1>Tabla de multiplicar del 3</h1>
-            <p>Aprende y practica las multiplicaciones</p>
+
+            <div class="marca">
+                <span class="marca-icono">&lt;/&gt;</span>
+
+                <div class="marca-texto">
+                    <span class="marca-nombre">TECHLAB</span>
+                    <span class="marca-descripcion">
+                        LEARNING ENVIRONMENT
+                    </span>
+                </div>
+            </div>
+
+            <div class="estado">
+                <span class="estado-punto"></span>
+                MÓDULO EDUCATIVO
+            </div>
+
         </header>
 
         <section class="contenido">
 
-            <div class="zona-boton">
-                <a href="#tabla" class="boton-probar">PROBAR</a>
+            <div class="introduccion">
+                <span class="etiqueta">MATEMÁTICAS / FUNDAMENTOS</span>
+
+                <h1>Tabla de multiplicar <span>del 3.</span></h1>
+
+                <p class="descripcion">
+                    Fortalece tus fundamentos matemáticos con una
+                    experiencia de aprendizaje sencilla y organizada.
+                </p>
             </div>
 
-            <h2 id="tabla">Tabla del 3</h2>
+            <div class="zona-boton">
+                <a href="#tabla" class="boton-probar">
+                    <span class="boton-icono">&gt;_</span>
+                    PROBAR
+                    <span class="boton-flecha">↗</span>
+                </a>
+            </div>
 
-            <div class="tabla-multiplicar">
+            <section class="panel-tabla" aria-labelledby="titulo-tabla">
 
-                <div class="fila">
-                    <span>3 × 1</span>
-                    <span>3</span>
+                <div class="panel-encabezado">
+                    <div>
+                        <span class="panel-etiqueta">EJERCICIO 001</span>
+                        <h2 id="titulo-tabla">Secuencia de multiplicación</h2>
+                    </div>
+
+                    <span class="panel-version">x3</span>
                 </div>
 
-                <div class="fila">
-                    <span>3 × 2</span>
-                    <span>6</span>
+                <div class="tabla-multiplicar" id="tabla"
+                     aria-label="Tabla de multiplicar del 3">
+
+                    <div class="fila fila-titulos">
+                        <span>OPERACIÓN</span>
+                        <span>RESULTADO</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 01</span>
+                        <span class="resultado">03</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 02</span>
+                        <span class="resultado">06</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 03</span>
+                        <span class="resultado">09</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 04</span>
+                        <span class="resultado">12</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 05</span>
+                        <span class="resultado">15</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 06</span>
+                        <span class="resultado">18</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 07</span>
+                        <span class="resultado">21</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 08</span>
+                        <span class="resultado">24</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 09</span>
+                        <span class="resultado">27</span>
+                    </div>
+
+                    <div class="fila">
+                        <span class="operacion">03 <span>×</span> 10</span>
+                        <span class="resultado">30</span>
+                    </div>
+
                 </div>
 
-                <div class="fila">
-                    <span>3 × 3</span>
-                    <span>9</span>
+                <div class="panel-pie">
+                    <span>10 OPERACIONES</span>
+                    <span>ESTADO: <strong>LISTO</strong></span>
                 </div>
 
-                <div class="fila">
-                    <span>3 × 4</span>
-                    <span>12</span>
-                </div>
+            </section>
 
-                <div class="fila">
-                    <span>3 × 5</span>
-                    <span>15</span>
-                </div>
-
-                <div class="fila">
-                    <span>3 × 6</span>
-                    <span>18</span>
-                </div>
-
-                <div class="fila">
-                    <span>3 × 7</span>
-                    <span>21</span>
-                </div>
-
-                <div class="fila">
-                    <span>3 × 8</span>
-                    <span>24</span>
-                </div>
-
-                <div class="fila">
-                    <span>3 × 9</span>
-                    <span>27</span>
-                </div>
-
-                <div class="fila">
-                    <span>3 × 10</span>
-                    <span>30</span>
-                </div>
-
+            <div class="nota">
+                <span class="nota-icono">i</span>
+                <p>
+                    Consejo: practica la secuencia en voz alta para
+                    reforzar la memorización de los resultados.
+                </p>
             </div>
 
         </section>
 
         <footer class="pie">
-            <p>¡Practica cada día y aprende matemáticas!</p>
+            <span>
+                TECHLAB <span class="separador">/</span> EDUCACIÓN DIGITAL
+            </span>
+
+            <span class="creador">
+                Creado por:
+                <strong>Christian Camilo Herrera Pineda</strong>
+            </span>
+
+            <span>BUILD 001.0</span>
         </footer>
 
     </main>
